@@ -68,7 +68,10 @@ Page({
 
   },
 
-  //获取经纬度方法 
+  
+  /**
+   * 获取经纬度方法 
+   */
   getLocation: function() {
     var that = this
     wx.getLocation({
@@ -81,7 +84,10 @@ Page({
       }
     })
   },
-  //获取城市信息
+  
+  /**
+   * 获取城市信息
+   */
   getCity: function(latitude, longitude) {
     var that = this;
     var url = "https://api.map.baidu.com/geocoder/v2/";
@@ -110,7 +116,9 @@ Page({
     })
   },
 
-  //获取天气信息
+  /**
+   * 获取天气信息
+   */
   getWeahter: function(city) {
     var that = this
     var url = "https://free-api.heweather.com/s6/weather"
@@ -162,5 +170,19 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
+  },
+
+  /**
+   * 分享功能
+   */
+  onShareAppMessage: function () {
+    return {
+      path: "/pages/weather/weather",
+      success: function () {
+        wx.showToast({
+          title: '分享成功', icon: "success", duration: 2000
+        })
+      }
+    }
   }
 })
