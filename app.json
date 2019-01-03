@@ -28,5 +28,10 @@
         "selectedIconPath": "images/icon/me_selected.png"
       }
     ]
+  },
+  "permission":{
+    "scope.userLocation":{
+      "desc":"你的位置用于天气小程序查询实时位置天气"
+    }
   }
 }
